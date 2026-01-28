@@ -39,6 +39,50 @@
       padding: 20px 0;
       text-align: center;
     }
+    .speaker-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.speaker-card {
+  min-width: 240px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.speaker-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.speaker-card h6 {
+  margin-top: 8px;
+  font-weight: 600;
+}
+#phases img:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+#committee .card {
+  border-radius: 10px;
+}
+
+#committee h5 {
+  font-weight: 600;
+}
+
+#committee .list-group-item {
+  font-size: 14px;
+}
   </style>
 </head>
 
@@ -48,7 +92,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#home">
-      NSS Research Workshop<br>
+      NSS Research Methodology Workshop<br>
       <small>SIT Lonavala</small>
     </a>
 
@@ -66,7 +110,7 @@
         <li class="nav-item"><a class="nav-link" href="#committee">Committee</a></li>
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
         <li class="nav-item">
-          <a class="btn btn-danger btn-sm ms-lg-2" href="https://forms.gle/xxxx" target="_blank">
+          <a class="btn btn-danger btn-sm ms-lg-2" href="registration.html" target="_blank">
             Register
           </a>
         </li>
@@ -93,20 +137,21 @@
       METHODOLOGY WORKSHOP
     </h2>
 
-    <p class="mb-1">National Service Scheme (NSS)</p>
-    <p class="mb-1">Savitribai Phule Pune University, Pune</p>
-    <p class="mb-1">Sinhgad Institute of Technology, Lonavala</p>
+    <p class="mb-1">Organized By</p>
+    <h4 class="mb-1">National Service Scheme (NSS)</h4>
+    <h5 class="mb-1">Savitribai Phule Pune University, Pune</h5>
+    <h5 class="mb-1">Sinhgad Institute of Technology, Lonavala</h5>
     <p class="fw-semibold mb-2">NSS Unit B-055 & BSF-111</p>
 
     <p class="mb-3">
       <i class="bi bi-calendar-event"></i>
-      12 Feb 2026 – 14 Feb 2026 · Offline Mode
+      12 Feb 2026 – 14 Feb 2026 ·
     </p>
 
     <!-- CTA -->
-    <a href="https://forms.gle/xxxx" class="btn btn-warning px-4">
-      Register Now
-    </a>
+<a href="registration.html" class="btn btn-danger">
+  Register Now
+</a>
 
   </div>
 </section>
@@ -165,31 +210,28 @@
   <div class="container">
     <h3 class="section-title">Guest Speakers</h3>
 
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="assets/images/speakers/speaker1.jpg" class="card-img-top">
-          <div class="card-body">
-            <h6>Dr. ABC XYZ</h6>
-            <small>Professor, XYZ University</small>
-            <p>Topic: Research Design & Methodology</p>
-          </div>
-        </div>
+    <div class="speaker-scroll">
+
+      <div class="speaker-card">
+        <img src="assets/images/speakers/s1.jpg">
+        <h6>Dr. ABC XYZ</h6>
+        <small>Professor, XYZ University</small>
+        <p>Research Methodology</p>
       </div>
 
-      <div class="col-md-4">
-        <div class="card">
-          <img src="assets/images/speakers/speaker2.jpg" class="card-img-top">
-          <div class="card-body">
-            <h6>Dr. PQR LMN</h6>
-            <small>Research Scientist</small>
-            <p>Topic: Academic Writing & Publication</p>
-          </div>
-        </div>
+      <div class="speaker-card">
+        <img src="assets/images/speakers/s2.jpg">
+        <h6>Dr. PQR LMN</h6>
+        <small>Scientist</small>
+        <p>Academic Writing</p>
       </div>
+
+      <!-- Repeat for all 10 speakers -->
+
     </div>
   </div>
 </section>
+
 
 <!-- ================= SCHEDULE ================= -->
 <section id="schedule" class="bg-light">
@@ -222,7 +264,17 @@
 <!-- ================= PHASES ================= -->
 <section id="phases">
   <div class="container">
-    <h3 class="section-title">Workshop Phases</h3>
+    <h3 class="section-title">Research Workshop Phases</h3>
+
+    <p class="text-center text-muted">
+      The workshop follows a structured research process as shown below.
+    </p>
+
+    <div class="text-center my-4">
+      <img src="assets/images/research-phases.png"
+           class="img-fluid rounded shadow"
+           alt="Research Methodology Phases Diagram">
+    </div>
 
     <ol>
       <li>Registration</li>
@@ -236,21 +288,122 @@
   </div>
 </section>
 
+
+<!-- ================= COMMITTEE ================= -->
 <!-- ================= COMMITTEE ================= -->
 <section id="committee" class="bg-light">
   <div class="container">
+
     <h3 class="section-title">Organising Committee</h3>
 
-    <ul>
-      <li>Patron</li>
-      <li>Chairman</li>
-      <li>Principal</li>
-      <li>NSS Program Officer</li>
-      <li>Workshop Coordinator</li>
-      <li>Core Committee Members</li>
-    </ul>
+    <!-- ===== Top Authorities ===== -->
+    <div class="row g-3 text-center mb-4">
+
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm h-100">
+          <strong>Patron</strong>
+          <p class="mb-0 mt-1">Dr. __________________</p>
+          <small class="text-muted">Vice Chancellor</small><br>
+          <small class="text-muted">Savitribai Phule Pune University, Pune</small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm h-100">
+          <strong>Chairman</strong>
+          <p class="mb-0 mt-1">Shri __________________</p>
+          <small class="text-muted">Sinhgad Technical Education Society</small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm h-100">
+          <strong>Principal</strong>
+          <p class="mb-0 mt-1">Dr. __________________</p>
+          <small class="text-muted">Sinhgad Institute of Technology, Lonavala</small>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== NSS Program Officer ===== -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6">
+        <div class="card p-3 text-center border-primary shadow-sm">
+          <strong>NSS Program Officer</strong>
+          <p class="mb-0 mt-1">Prof. __________________</p>
+          <small class="text-muted">Sinhgad Institute of Technology, Lonavala</small><br>
+          <small class="text-muted">NSS Unit B-055 & BSF-111</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Workshop Coordinator ===== -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6">
+        <div class="card p-3 text-center border-success shadow-sm">
+          <strong>Workshop Coordinator</strong>
+          <p class="mb-0 mt-1">Prof. __________________</p>
+          <small class="text-muted">Department of __________________</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Core Organising Committee ===== -->
+    <h5 class="mb-3 text-center">Core Organising Committee</h5>
+
+    <div class="row g-2 text-center mb-4">
+      <div class="col-6 col-md-3">
+        <div class="card p-2">
+          <small>Prof. __________________</small><br>
+          <small class="text-muted">Computer Engineering</small>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card p-2">
+          <small>Prof. __________________</small><br>
+          <small class="text-muted">Mechanical Engineering</small>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card p-2">
+          <small>Prof. __________________</small><br>
+          <small class="text-muted">IT Department</small>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card p-2">
+          <small>Prof. __________________</small><br>
+          <small class="text-muted">ENTC</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Student Coordinators ===== -->
+    <h5 class="mb-3 text-center">Student Coordinators</h5>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">
+            <strong>Main Student Coordinator</strong> – Name
+          </li>
+          <li class="list-group-item">
+            <strong>Technical & Website Coordinator</strong> – Name
+          </li>
+          <li class="list-group-item">
+            <strong>Registration & Hospitality</strong> – Name
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- ================= GALLERY ================= -->
 <section id="gallery">
@@ -262,6 +415,46 @@
       <div class="col-6 col-md-3"><img src="assets/images/gallery/g2.jpg" class="img-fluid rounded"></div>
       <div class="col-6 col-md-3"><img src="assets/images/gallery/g3.jpg" class="img-fluid rounded"></div>
       <div class="col-6 col-md-3"><img src="assets/images/gallery/g4.jpg" class="img-fluid rounded"></div>
+    </div>
+  </div>
+</section>
+<!-- ================= VENUE & MAP ================= -->
+<section id="venue" class="bg-light">
+  <div class="container">
+
+    <h3 class="section-title">Venue & Location</h3>
+
+    <div class="row g-4 align-items-center">
+
+      <!-- Venue Details -->
+      <div class="col-md-5">
+        <h5>Sinhgad Institute of Technology, Lonavala</h5>
+
+        <p class="mb-2">
+          Kusgaon (Bk.), Off Mumbai–Pune Expressway,<br>
+          Lonavala, Pune – 410401, Maharashtra
+        </p>
+
+        <a href="https://maps.google.com/?q=Sinhgad+Institute+of+Technology+Lonavala"
+           target="_blank"
+           class="btn btn-outline-primary btn-sm">
+          Open in Google Maps
+        </a>
+      </div>
+
+      <!-- Google Map -->
+      <div class="col-md-7">
+        <div class="ratio ratio-16x9 rounded shadow">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.2625622380663!2d73.42874653857858!3d18.73006689560116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8018f99779941%3A0x6d8398f7fcc9db6f!2sSIT%20Sinhgad%20Institute%20Of%20Technology%20Lonavala!5e0!3m2!1sen!2sin!4v1769609698825!5m2!1sen!2sin"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -277,6 +470,7 @@
     <p><i class="bi bi-whatsapp"></i> WhatsApp Helpline Available</p>
   </div>
 </section>
+
 
 <!-- ================= FOOTER ================= -->
 <footer>
